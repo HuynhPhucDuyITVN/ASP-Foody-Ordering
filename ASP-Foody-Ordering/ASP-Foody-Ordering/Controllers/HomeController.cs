@@ -104,6 +104,58 @@ namespace ASP_Foody_Ordering.Controllers
             session.Remove("shopcart");
         }
 
+        // Cho hàng vào giỏ
+        public async Task<IActionResult> AddToCart(int id)
+        {
+            var monan = await _context.Monans
+                .FirstOrDefaultAsync(m => m.MaMa == id);
+            if (monan == null)
+            {
+                return NotFound("Sản phẩm không tồn tại");
+            }
+            var cart = GetCartItems();
+            var item = cart.Find(p => p.Monan.MaMa == id);
+            if (item != null)
+            {
+                item.SoLuong++;
+            }
+            else
+            {
+                cart.Add(new CartItem() { Monan = monan, SoLuong = 1 });
+            }
+            SaveCartSession(cart);
+            return RedirectToAction(nameof(ViewCart));
+        }
+        // Chuyển đến view xem giỏ hàng
+        public IActionResult ViewCart()
+        {
+            return View(GetCartItems());
+        }
+        //Xóa một mặt hàng trong giỏ
+        public IActionResult RemoveItem(int id)
+        {
+            var cart = GetCartItems();
+            var item = cart.Find(p => p.Monan.MaMa == id);
+            if (item != null)
+            {
+                cart.Remove(item);
+            }
+            SaveCartSession(cart);
+            return RedirectToAction(nameof(ViewCart));
+        }
+        //Cập nhật số lượng
+        public IActionResult UpdateItem(int id, int quantity)
+        {
+            var cart = GetCartItems();
+            var item = cart.Find(p => p.Monan.MaMa == id);
+            if (item != null)
+            {
+                item.SoLuong = quantity;
+            }
+            SaveCartSession(cart);
+            return RedirectToAction(nameof(ViewCart));
+        }
+
         //create funtion fill ten 
         public async Task<IActionResult> LocTheoTen(string keyword)
         {

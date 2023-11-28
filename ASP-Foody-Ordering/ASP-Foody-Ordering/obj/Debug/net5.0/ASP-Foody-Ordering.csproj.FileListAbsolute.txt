@@ -159,3 +159,4 @@ C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\About.cshtml.g.cs
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\Menu.cshtml.g.cs
+C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\LocTheoTen.cshtml.g.cs

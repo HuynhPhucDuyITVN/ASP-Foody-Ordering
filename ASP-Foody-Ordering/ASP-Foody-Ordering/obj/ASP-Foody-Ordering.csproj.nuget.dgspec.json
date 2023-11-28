@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Home\\Documents\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\ASP-Foody-Ordering.csproj": {}
+    "C:\\Users\\Admin\\Documents\\hoc_tap\\ASP.Net\\Food_oder\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\ASP-Foody-Ordering.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Home\\Documents\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\ASP-Foody-Ordering.csproj": {
+    "C:\\Users\\Admin\\Documents\\hoc_tap\\ASP.Net\\Food_oder\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\ASP-Foody-Ordering.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Home\\Documents\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\ASP-Foody-Ordering.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\hoc_tap\\ASP.Net\\Food_oder\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\ASP-Foody-Ordering.csproj",
         "projectName": "ASP-Foody-Ordering",
-        "projectPath": "C:\\Users\\Home\\Documents\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\ASP-Foody-Ordering.csproj",
-        "packagesPath": "C:\\Users\\Home\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Home\\Documents\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Documents\\hoc_tap\\ASP.Net\\Food_oder\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\ASP-Foody-Ordering.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\hoc_tap\\ASP.Net\\Food_oder\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\ASP-Foody-Ordering\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Home\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

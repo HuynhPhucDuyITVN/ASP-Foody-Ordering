@@ -25,6 +25,17 @@ namespace ASP_Foody_Ordering.Controllers
             var applicationDbContext = _context.Monans.OrderByDescending(m => m.LuotXem).Take(9);
             return View(await applicationDbContext.ToListAsync());
         }
+        //GET:Menu
+        public async Task<IActionResult> Menu()
+        {
+            var applicationDbContext = _context.Monans.Include(m => m.MaDmNavigation);
+            return View(await applicationDbContext.ToListAsync());
+        }
+        //GET:About
+        public async Task<IActionResult> About()
+        {
+            return View();
+        }
 
         // GET: Home/Details/5
         public async Task<IActionResult> Details(int? id)

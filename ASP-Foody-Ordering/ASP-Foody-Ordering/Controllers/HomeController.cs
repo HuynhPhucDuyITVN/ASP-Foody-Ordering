@@ -77,6 +77,12 @@ namespace ASP_Foody_Ordering.Controllers
 
             return View(monan);
         }
+        //create funtion fill ten 
+        public async Task<IActionResult> LocTheoTen(string keyword)
+        {
+            var monan = _context.Monans.Where(p => p.Ten.Contains(keyword));
+            return View(await monan.ToListAsync());
+        }
 
         private bool MonanExists(int id)
         {

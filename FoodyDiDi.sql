@@ -69,3 +69,11 @@ create table CTHOADON(
 	ThanhTien int
 )
 go
+--Thêm Danh Mục
+insert into DANHMUC(Ten,HinhAnh)values(N'Món khai vị','icon1.png')
+insert into DANHMUC(Ten,HinhAnh)values(N'Salad','icon2.png')
+insert into DANHMUC(Ten,HinhAnh)values(N'Món ăn nhẹ','icon3.png')
+insert into DANHMUC(Ten,HinhAnh)values(N'Món Chiên','icon4.png')
+insert into DANHMUC(Ten,HinhAnh)values(N'Món nướng','icon5.png')
+insert into DANHMUC(Ten,HinhAnh)values(N'Combo','icon6.png')
+insert into DANHMUC(Ten,HinhAnh)values(N'Lẩu','icon7.png')

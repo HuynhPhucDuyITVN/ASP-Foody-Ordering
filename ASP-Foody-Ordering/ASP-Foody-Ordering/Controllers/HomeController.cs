@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ASP_Foody_Ordering.Data;
 using ASP_Foody_Ordering.Models;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace ASP_Foody_Ordering.Controllers
 {
@@ -76,6 +78,30 @@ namespace ASP_Foody_Ordering.Controllers
             }
 
             return View(monan);
+        }
+
+        // Đọc danh sách CartItem từ session
+        List<CartItem> GetCartItems()
+        {
+            var session = HttpContext.Session;
+            string jsoncart = session.GetString("shopcart");
+            if (jsoncart != null)
+            {
+                return JsonConvert.DeserializeObject<List<CartItem>>(jsoncart);
+            }
+            return new List<CartItem>();
+        }
+        // Lưu danh sách CartItem trong giỏ hàng vào session
+        void SaveCartSession(List<CartItem> list)
+        {
+            var session = HttpContext.Session;
+            string jsoncart = JsonConvert.SerializeObject(list);
+            session.SetString("shopcart", jsoncart);
+        }
+        void ClearCart()
+        {
+            var session = HttpContext.Session;
+            session.Remove("shopcart");
         }
 
         //create funtion fill ten 

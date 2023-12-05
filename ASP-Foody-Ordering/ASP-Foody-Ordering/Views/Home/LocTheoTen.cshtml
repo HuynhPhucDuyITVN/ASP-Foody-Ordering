@@ -38,7 +38,7 @@
 
                                             @if (item.GiaBan != item.GiaGoc)
                                             {
-                                                <span class="text-muted text-decoration-line-through">@item.GiaGoc.ToString("n0") đ</span>
+                                                <span class="text-muted text-decoration-line-through" style="text-decoration: line-through;">@item.GiaGoc.ToString("n0") đ</span>
                                             }
                                             <span class="text-danger fw-bolder">@item.GiaBan.ToString("n0") đ</span>
                                             <a asp-controller="Home" asp-action="AddToCart" asp-route-id="@item.MaMa">

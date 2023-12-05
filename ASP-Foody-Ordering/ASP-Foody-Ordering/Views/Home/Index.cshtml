@@ -13,14 +13,14 @@
                             <div class="col-md-7 col-lg-6 ">
                                 <div class="detail-box">
                                     <h1>
-                                        Fast Food Restaurant
+                                        Món ngon tại nhà
                                     </h1>
                                     <p>
-                                        Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                                        Đặt món ăn online, giao tận nơi là một dịch vụ tiện lợi giúp bạn có thể thưởng thức những món ăn ngon mà không cần ra khỏi nhà. Với dịch vụ này, bạn có thể dễ dàng lựa chọn món ăn từ nhiều nhà hàng khác nhau, chỉ cần một vài thao tác đơn giản trên điện thoại hoặc máy tính.
                                     </p>
                                     <div class="btn-box">
                                         <a asp-area="" asp-controller="Home" asp-action="Menu" class="btn1">
-                                            Order Now
+                                            Mua Ngay
                                         </a>
                                     </div>
                                 </div>
@@ -34,14 +34,14 @@
                             <div class="col-md-7 col-lg-6 ">
                                 <div class="detail-box">
                                     <h1>
-                                        Fast Food Restaurant
+                                        Ăn ngon, tiết kiệm
                                     </h1>
                                     <p>
-                                        Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                                        Đặt món ăn, nhận ưu đãi là một chương trình khuyến mãi hấp dẫn được nhiều website đặt món ăn áp dụng. Với chương trình này, bạn có thể tiết kiệm được một khoản tiền khi đặt món ăn. Các chương trình ưu đãi thường bao gồm giảm giá, tặng quà,...
                                     </p>
                                     <div class="btn-box">
                                         <a asp-area="" asp-controller="Home" asp-action="Menu" class="btn1">
-                                            Order Now
+                                            Mua Ngay
                                         </a>
                                     </div>
                                 </div>
@@ -55,14 +55,14 @@
                             <div class="col-md-7 col-lg-6 ">
                                 <div class="detail-box">
                                     <h1>
-                                        Fast Food Restaurant
+                                        Nhanh chóng, tiện lợi
                                     </h1>
                                     <p>
-                                        Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                                        Đặt món ăn, giao nhanh chóng là một tiêu chí quan trọng mà nhiều người dùng quan tâm khi lựa chọn website đặt món ăn. Với dịch vụ giao hàng nhanh chóng, bạn có thể nhận được món ăn trong thời gian ngắn, không cần phải chờ đợi lâu. Điều này giúp bạn tiết kiệm thời gian và có thể thưởng thức món ăn ngay khi còn nóng hổi.
                                     </p>
                                     <div class="btn-box">
                                         <a asp-area="" asp-controller="Home" asp-action="Menu" class="btn1">
-                                            Order Now
+                                            Mua Ngay
                                         </a>
                                     </div>
                                 </div>
@@ -114,7 +114,7 @@
 
                                             @if (item.GiaBan != item.GiaGoc)
                                             {
-                                                <span class="text-muted text-decoration-line-through">@item.GiaGoc.ToString("n0") đ</span>
+                                                <span class="text-muted text-decoration-line-through" style="text-decoration: line-through;">@item.GiaGoc.ToString("n0") đ</span>
                                             }
                                             <span class="text-danger fw-bolder">@item.GiaBan.ToString("n0") đ</span>
                                             <a asp-controller="Home" asp-action="AddToCart" asp-route-id="@item.MaMa">
@@ -181,7 +181,7 @@
             </div>
             <div class="btn-box">
                 <a asp-area="" asp-controller="Home" asp-action="Menu">
-                    Go to Menu
+                    Đi tới Menu
                 </a>
             </div>
         </div>
@@ -193,7 +193,7 @@
         <div class="container">
             <div class="heading_container heading_center psudo_white_primary mb_45">
                 <h2>
-                    What Says Our Customers
+                    Những lời khen của khách hàng thân mến
                 </h2>
             </div>
             <div class="carousel-wrap row ">
@@ -202,17 +202,17 @@
                         <div class="box">
                             <div class="detail-box">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                                    Website này rất tiện lợi, giúp mình tiết kiệm được rất nhiều thời gian. Mình chỉ cần ngồi ở nhà và đặt món ăn, sau đó sẽ có người giao hàng tận nơi. Mình không cần phải ra ngoài nắng nóng hay chờ đợi lâu để được thưởng thức món ăn. Món ăn được giao đến trong tình trạng nóng hổi và vẫn giữ được hương vị thơm ngon. Mình rất hài lòng với dịch vụ của website này.
                                 </p>
                                 <h6>
-                                    Moana Michell
+                                    Anh 7 Dev
                                 </h6>
                                 <p>
-                                    magna aliqua
+                                    Nguyễn Chí Cường
                                 </p>
                             </div>
                             <div class="img-box">
-                                <img src="~/images/client1.jpg" alt="" class="box-img">
+                                <img src="~/images/nccuong.jpg" alt="" class="box-img">
                             </div>
                         </div>
                     </div>
@@ -220,17 +220,35 @@
                         <div class="box">
                             <div class="detail-box">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                                    Mình mới biết đến website này cách đây không lâu nhưng đã rất hài lòng với dịch vụ của họ. Món ăn ngon, giá cả hợp lý và giao hàng nhanh chóng. Mình đã đặt món ăn từ nhiều nhà hàng khác nhau và đều rất hài lòng với chất lượng món ăn. Website này có rất nhiều lựa chọn món ăn cho bạn, từ món ăn truyền thống đến món ăn quốc tế. Mình chắc chắn sẽ tiếp tục sử dụng dịch vụ của website này trong tương lai.
                                 </p>
                                 <h6>
-                                    Mike Hamell
+                                    Anh Tư Đăng
                                 </h6>
                                 <p>
-                                    magna aliqua
+                                    Lê Hải Đăng
                                 </p>
                             </div>
                             <div class="img-box">
-                                <img src="~/images/client2.jpg" alt="" class="box-img">
+                                <img src="~/images/lhdang.jpg" alt="" class="box-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="box">
+                            <div class="detail-box">
+                                <p>
+                                    Website này thường xuyên có các chương trình ưu đãi hấp dẫn, giúp mình tiết kiệm được một khoản tiền khi đặt món ăn. Mình đã được hưởng rất nhiều ưu đãi từ website này, chẳng hạn như giảm giá, tặng quà,... Các chương trình ưu đãi của website rất đa dạng và hấp dẫn, giúp mình có cơ hội thưởng thức món ăn ngon với giá cả phải chăng hơn. Mình rất hài lòng với các chương trình ưu đãi của website này.
+                                </p>
+                                <h6>
+                                    Đại Ca Huy
+                                </h6>
+                                <p>
+                                    Trần Đình Huy
+                                </p>
+                            </div>
+                            <div class="img-box">
+                                <img src="~/images/tdhuy.jpg" alt="" class="box-img">
                             </div>
                         </div>
                     </div>

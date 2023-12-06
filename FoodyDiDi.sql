@@ -35,7 +35,7 @@ create table TAIKHOAN(
 	Ten nvarchar(100) not null,
 	DienThoai varchar(20),
 	Email varchar(50),
-	MatKhau varchar(50) not null,
+	MatKhau varchar(50),
 	QuyenHan int not null default 0, --0:khach; 1 admin
 	TrangThai int default 1 --1:con hoat dong; 0:ngung hoat dong
 )
@@ -45,9 +45,9 @@ create table DIACHI(
 	MaDC int identity primary key not null,
 	MaTK int foreign key (MaTK) references TAIKHOAN(MaTK) not null,
 	DiaChi nvarchar (100) not null,
-	PhuongXa varchar(20),
-	QuanHuyen varchar(50),
-	TinhThanh varchar(50)
+	PhuongXa nvarchar(20),
+	QuanHuyen nvarchar(50),
+	TinhThanh nvarchar(50)
 )
 go
 
@@ -136,3 +136,17 @@ insert into MonAn(Ten,GiaGoc,GiaBan,MoTa,HinhAnh,MaDM)  values(N'Lẩu tôm sú'
 insert into MonAn(Ten,GiaGoc,GiaBan,MoTa,HinhAnh,MaDM)  values(N'Lẩu cua ',300000,250000,N'Lẩu cua là sự phối hợp của nước lẩu thơm ngon và thịt cua tươi ngon. Hương vị ngon miệng và thịt cua giữ được độ giòn, tạo nên một món lẩu hấp dẫn.','mon46.jpg',7)
 insert into MonAn(Ten,GiaGoc,GiaBan,MoTa,HinhAnh,MaDM)  values(N'Lẩu cá kèo',400000,350000,N' Lẩu cá kèo sử dụng cá kèo tươi ngon, kết hợp với nước lẩu thơm ngon và các loại rau sống. Món ăn mang lại hương vị đặc trưng của cá biển và hấp dẫn với sự giòn ngon của cá.','mon47.jpg',7)
 insert into MonAn(Ten,GiaGoc,GiaBan,MoTa,HinhAnh,MaDM)  values(N'Lẩu nấm gà',200000,200000,N'Lẩu nấm gà là sự kết hợp của nước lẩu ngon và nấm gà tươi ngon. Món ăn mang lại hương vị đậm đà, thơm ngon và phong phú từ các loại nấm.','mon48.jpg',7)
+
+select * from MONAN
+--Cập nhật lượt xem mặc định
+update MONAN set LuotXem =10 where MaMA=1;
+update MONAN set LuotXem =9 where MaMA=11;
+update MONAN set LuotXem =8 where MaMA=17;
+update MONAN set LuotXem =7 where MaMA=26;
+update MONAN set LuotXem =6 where MaMA=33;
+update MONAN set LuotXem =5 where MaMA=42;
+
+SELECT * FROM HOADON;
+SELECT * FROM CTHOADON;
+select * from TAIKHOAN;
+select * from DIACHI;

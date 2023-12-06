@@ -19,7 +19,7 @@ namespace ASP_Foody_Ordering.Models
         [Required]
         [Column("DiaChi")]
         [StringLength(100)]
-        public string DiaChi1 { get; set; }
+        public string DiaChi { get; set; }
         [StringLength(20)]
         public string PhuongXa { get; set; }
         [StringLength(50)]

@@ -20,28 +20,40 @@ namespace ASP_Foody_Ordering.Controllers
         {
             _context = context;
         }
+        //GET: Lấy số hàng trong giỏ
+        void GetInfo()
+        {
+            // So luong hang trong gio
+            ViewData["soluong"] = GetCartItems().Count;
 
+            // Danh sach danh muc doc tu db
+            ViewBag.danhmuc = _context.Danhmucs.ToList();
+        }
         // GET: Home
         public async Task<IActionResult> Index()
         {
+            GetInfo();
             var applicationDbContext = _context.Monans.OrderByDescending(m => m.LuotXem).Take(9);
             return View(await applicationDbContext.ToListAsync());
         }
         //GET:Menu
         public async Task<IActionResult> Menu()
         {
+            GetInfo();
             var applicationDbContext = _context.Monans.Include(m => m.MaDmNavigation);
             return View(await applicationDbContext.ToListAsync());
         }
         //GET:About
         public async Task<IActionResult> About()
         {
+            GetInfo();
             return View();
         }
 
         // GET: Home/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            GetInfo();
             if (id == null)
             {
                 return NotFound();
@@ -129,6 +141,7 @@ namespace ASP_Foody_Ordering.Controllers
         // Chuyển đến view xem giỏ hàng
         public IActionResult ViewCart()
         {
+            GetInfo();
             return View(GetCartItems());
         }
         //Xóa một mặt hàng trong giỏ
@@ -156,9 +169,16 @@ namespace ASP_Foody_Ordering.Controllers
             return RedirectToAction(nameof(ViewCart));
         }
 
+        public IActionResult CheckOut()
+        {
+            GetInfo();
+            return View(GetCartItems());
+        }
+
         //create funtion fill ten 
         public async Task<IActionResult> LocTheoTen(string keyword)
         {
+            GetInfo();
             var monan = _context.Monans.Where(p => p.Ten.Contains(keyword));
             return View(await monan.ToListAsync());
         }
@@ -166,6 +186,63 @@ namespace ASP_Foody_Ordering.Controllers
         private bool MonanExists(int id)
         {
             return _context.Monans.Any(e => e.MaMa == id);
+        }
+
+        public async Task<IActionResult> CreateBill(string hoten, string email, string dienthoai, string diachi, string phuongxa, string quanhuyen, string tinhthanh)
+        {
+            GetInfo();
+            //luu tai khoan
+            Taikhoan tk = new Taikhoan();
+            tk.Ten = hoten;
+            tk.Email = email;
+            tk.DienThoai = dienthoai;
+            _context.Add(tk);
+            await _context.SaveChangesAsync();
+            //luu dia chi
+            Diachi dc = new Diachi();
+            dc.MaTk = tk.MaTk;
+            dc.DiaChi = diachi;
+            dc.PhuongXa = phuongxa;
+            dc.QuanHuyen = quanhuyen;
+            dc.TinhThanh = tinhthanh;
+            _context.Add(dc);
+            await _context.SaveChangesAsync();
+            //luu hoa don
+            Hoadon hd = new Hoadon();
+            hd.MaTk = tk.MaTk;
+            hd.Ngay = DateTime.Now;
+
+            _context.Add(hd);
+            await _context.SaveChangesAsync();
+            //luu cac chi tiet hoa don
+            var cart = GetCartItems();
+            int thanhtien = 0;
+            int tongtien = 0;
+            foreach (var i in cart)
+            {
+                var ct = new Cthoadon();
+                ct.MaHd = hd.MaHd;
+                ct.MaMa = i.Monan.MaMa;
+                thanhtien = i.Monan.GiaBan * i.SoLuong;
+                tongtien += thanhtien;
+                ct.DonGia = i.Monan.GiaBan;
+                ct.SoLuong = (short)i.SoLuong;
+                ct.ThanhTien = thanhtien;
+                if (i.Monan.LuotMua == null)
+                    i.Monan.LuotMua = 1;
+                else
+                    i.Monan.LuotMua += 1;
+                _context.Add(ct);
+            }
+            await _context.SaveChangesAsync();
+            //cap nhat tong tien hoa don
+            hd.TongTien = tongtien;
+            _context.Update(hd);
+            await _context.SaveChangesAsync();
+            //xoa gio hang
+            ClearCart();
+
+            return View(hd);
         }
     }
 }

@@ -1,62 +1,64 @@
 ﻿@model List<ASP_Foody_Ordering.Models.CartItem>
-
-    <section class="about_section layout_padding bg-light">
-        @if (Model.Count > 0)
-        {
-            <h3 class="text-info">Giỏ hàng của bạn</h3>
-            int stt = 1;
-            int thanhtien = 0;
-            int tongtien = 0;
-            <table class="table">
-                <tr>
-                    <th>STT</th>
-                    <th>Món</th>
-                    <th>Giá</th>
-                    <th>Số lượng</th>
-                    <th>Thành tiền</th>
-                </tr>
-
-                @foreach (var i in Model)
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-1">
+            <section class="about_section layout_padding bg-light">
+                @if (Model.Count > 0)
                 {
-                    thanhtien = i.Monan.GiaBan * i.SoLuong;
-                    tongtien += thanhtien;
-                    <tr class="align-middle">
-                        <td>@(stt++)</td>
-                        <td>
-                            <img src="~/images/MonAn/@(i.Monan.HinhAnh)" class="img-thumbnail" width="50" />
-                            @(i.Monan.Ten)
-                        </td>
-                        <td>@(i.Monan.GiaBan.ToString("n0")) đ</td>
-                        <td>
-                            <form asp-action="UpdateItem" method="post">
-                                <div class="row">
-                                    <div class="col">
-                                        <input name="id" type="hidden" asp-for="@(i.Monan.MaMa)" />
-                                        <input name="quantity" type="number" asp-for="@(i.SoLuong)" class="form-control" />
-                                    </div>
-                                    <div class="col">
-                                        <input class="btn btn-warning" type="submit" value="Cập nhật"></input>
-                                    </div>
-                                </div>
-                            </form>
-                        </td>
-                        <td>@(thanhtien.ToString("n0"))</td>
-                        <td><a asp-action="RemoveItem" asp-route-id="@i.Monan.MaMa" class="btn btn-danger">Xóa</a></td>
-                    </tr>
+                    <h3 class="text-info">Giỏ hàng của bạn</h3>
+                    int stt = 1;
+                    int thanhtien = 0;
+                    int tongtien = 0;
+                    <table class="table">
+                        <tr>
+                            <th>STT</th>
+                            <th>Món</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+
+                        @foreach (var i in Model)
+                        {
+                            thanhtien = i.Monan.GiaBan * i.SoLuong;
+                            tongtien += thanhtien;
+                            <tr class="align-middle">
+                                <td>@(stt++)</td>
+                                <td>
+                                    <img src="~/images/MonAn/@(i.Monan.HinhAnh)" class="img-thumbnail" width="50" />
+                                    @(i.Monan.Ten)
+                                </td>
+                                <td>@(i.Monan.GiaBan.ToString("n0")) đ</td>
+                                <td>
+                                    <form asp-action="UpdateItem" method="post">
+                                        <div class="row">
+                                            <div class="col">
+                                                <input name="id" type="hidden" asp-for="@(i.Monan.MaMa)" />
+                                                <input name="quantity" type="number" asp-for="@(i.SoLuong)" class="form-control" />
+                                            </div>
+                                            <div class="col">
+                                                <input class="btn btn-warning" type="submit" value="Cập nhật"></input>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </td>
+                                <td>@(thanhtien.ToString("n0"))</td>
+                                <td><a asp-action="RemoveItem" asp-route-id="@i.Monan.MaMa" class="btn btn-danger">Xóa</a></td>
+                            </tr>
+                        }
+                        <tr>
+                            <td colspan="4" class="font-weight-bold">Thành tiền</td>
+                            <td colspan="2" class="text-danger font-weight-bold">@tongtien.ToString("n0") đ</td>
+                        </tr>
+                    </table>
+                    <div class="text-left">
+                        <a class="btn btn-info" asp-action="CheckOut">Thanh Toán</a>
+                    </div>
                 }
-                <tr>
-                    <td colspan="4" class="font-weight-bold">Thành tiền</td>
-                    <td colspan="2" class="text-danger font-weight-bold">@tongtien.ToString("n0") đ</td>
-                </tr>
-            </table>
-            <div class="text-left">
-                <a class="btn btn-info" asp-action="CheckOut">Thanh Toán</a>
-            </div>
-        }
-        else
-        {
-            <h3 class="text-danger text-center">Giỏ hàng rỗng</h3>
-        }
+                else
+                {
+                    <h3 class="text-danger text-center">Giỏ hàng rỗng</h3>
+                }
+            </section>
+        </div>
     </section>
 
-   

@@ -1,0 +1,85 @@
+﻿@model List<ASP_Foody_Ordering.Models.CartItem>
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-1">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Thông tin khách hàng</h3>
+                <form asp-action="CreateBill">
+                    <div class="my-3">
+                        <label>Họ tên</label>
+                        <input type="text" class="form-control" name="hoten" />
+                    </div>
+                    <div class="my-3">
+                        <label>Email</label>
+                        <input type="email" class="form-control" name="email" />
+                    </div>
+                    <div class="my-3">
+                        <label>Số điện thoại</label>
+                        <input type="text" class="form-control" name="dienthoai" />
+                    </div>
+                    <div class="my-3">
+                        <label>Địa chỉ</label>
+                        <input type="text" class="form-control" name="diachi" />
+                    </div>
+                    <div class="my-3">
+                        <label>Phường xã</label>
+                        <input type="text" class="form-control" name="phuongxa" />
+                    </div>
+                    <div class="my-3">
+                        <label>Quận huyện</label>
+                        <input type="text" class="form-control" name="quanhuyen" />
+                    </div>
+                    <div class="my-3">
+                        <label>Tỉnh thành</label>
+                        <input type="text" class="form-control" name="tinhthanh" />
+                    </div>
+                    <div class="my-3">
+                        <input type="submit" class="btn btn-info" value="Lưu đơn hàng" />
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h3>Thông tin mặt hàng</h3>
+                @if (Model.Count > 0)
+                {
+                    <h3 class="text-info">Giỏ hàng của bạn</h3>
+                    int stt = 1;
+                    int thanhtien = 0;
+                    int tongtien = 0;
+                    <table class="table">
+                        <tr>
+                            <th>STT</th>
+                            <th>Món</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                        @foreach (var i in Model)
+                        {
+                            thanhtien = i.Monan.GiaBan * i.SoLuong;
+                            tongtien += thanhtien;
+                            <tr class="align-middle">
+                                <td>@(stt++)</td>
+                                <td>
+                                    <img src="~/images/MonAn/@(i.Monan.HinhAnh)" class="img-thumbnail" width="50" />
+                                    @(i.Monan.Ten)
+                                </td>
+                                <td>@(i.Monan.GiaBan.ToString("n0")) đ</td>
+                                <td>
+                                    @i.SoLuong
+                                </td>
+                                <td>@(thanhtien.ToString("n0"))</td>
+                            </tr>
+                        }
+                        <tr>
+                            <td colspan="4" class="font-weight-bold">Thành tiền</td>
+                            <td colspan="2" class="text-danger font-weight-bold">@tongtien.ToString("n0") đ</td>
+                        </tr>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+

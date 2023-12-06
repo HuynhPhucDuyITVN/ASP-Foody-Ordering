@@ -244,5 +244,12 @@ namespace ASP_Foody_Ordering.Controllers
 
             return View(hd);
         }
+
+        public async Task<IActionResult> MonAnTheoDanhMuc(int id)
+        {
+            GetInfo();
+            var applicationDbContext = _context.Monans.Where(m => m.MaDm == id);
+            return View(await applicationDbContext.ToListAsync());
+        }
     }
 }

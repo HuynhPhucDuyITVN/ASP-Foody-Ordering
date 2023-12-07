@@ -35,7 +35,7 @@ create table TAIKHOAN(
 	Ten nvarchar(100) not null,
 	DienThoai varchar(20),
 	Email varchar(50),
-	MatKhau varchar(50),
+	MatKhau varchar(255),
 	QuyenHan int not null default 0, --0:khach; 1 admin
 	TrangThai int default 1 --1:con hoat dong; 0:ngung hoat dong
 )
@@ -137,7 +137,7 @@ insert into MonAn(Ten,GiaGoc,GiaBan,MoTa,HinhAnh,MaDM)  values(N'Lẩu cua ',300
 insert into MonAn(Ten,GiaGoc,GiaBan,MoTa,HinhAnh,MaDM)  values(N'Lẩu cá kèo',400000,350000,N' Lẩu cá kèo sử dụng cá kèo tươi ngon, kết hợp với nước lẩu thơm ngon và các loại rau sống. Món ăn mang lại hương vị đặc trưng của cá biển và hấp dẫn với sự giòn ngon của cá.','mon47.jpg',7)
 insert into MonAn(Ten,GiaGoc,GiaBan,MoTa,HinhAnh,MaDM)  values(N'Lẩu nấm gà',200000,200000,N'Lẩu nấm gà là sự kết hợp của nước lẩu ngon và nấm gà tươi ngon. Món ăn mang lại hương vị đậm đà, thơm ngon và phong phú từ các loại nấm.','mon48.jpg',7)
 
-select * from MONAN
+select * from MONAN;
 --Cập nhật lượt xem mặc định
 update MONAN set LuotXem =10 where MaMA=1;
 update MONAN set LuotXem =9 where MaMA=11;
@@ -146,7 +146,17 @@ update MONAN set LuotXem =7 where MaMA=26;
 update MONAN set LuotXem =6 where MaMA=33;
 update MONAN set LuotXem =5 where MaMA=42;
 
+alter table TAIKHOAN
+alter column MatKhau varchar(255);
+--Tài khoản admin mặc định
+insert into TAIKHOAN(Ten,DienThoai,Email,MatKhau,QuyenHan) values (N'Admin','0378108260','admin@gmail.com','AQAAAAEAACcQAAAAECfllvvNXn5YXRaP/pMk+35EeP2pP1Snj/OQd2c7IkTEAB05xE7f38SDVvYSzWOsIA==',1);
+--Tài khoản user mặc định
+insert into TAIKHOAN(Ten,DienThoai,Email,MatKhau,QuyenHan) values (N'Duy','0378108260','phucduy11032002@gmail.com','AQAAAAEAACcQAAAAEE4kBiWlhd9+TuzfBf1Wkmf3t6VK8mMfLYmH1sUWiVJh804hML1vaI16ARuqgMlqfQ==',0);
+
 SELECT * FROM HOADON;
 SELECT * FROM CTHOADON;
 select * from TAIKHOAN;
 select * from DIACHI;
+select * from MONAN;
+
+select * from TAIKHOAN

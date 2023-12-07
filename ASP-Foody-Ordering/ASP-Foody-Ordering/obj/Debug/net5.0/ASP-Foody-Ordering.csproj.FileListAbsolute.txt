@@ -333,3 +333,5 @@ C:\Users\nccuo\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Orderin
 C:\Users\nccuo\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\ref\ASP-Foody-Ordering.dll
 C:\Users\nccuo\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\ASP-Foody-Ordering.pdb
 C:\Users\nccuo\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\ASP-Foody-Ordering.genruntimeconfig.cache
+C:\Users\nccuo\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Shared\_LayoutAdmin.cshtml.g.cs
+C:\Users\nccuo\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\Admin.cshtml.g.cs

@@ -200,12 +200,7 @@ namespace ASP_Foody_Ordering.Controllers
         {
             GetInfo();
             //luu tai khoan
-            Taikhoan tk = new Taikhoan();
-            tk.Ten = hoten;
-            tk.Email = email;
-            tk.DienThoai = dienthoai;
-            _context.Add(tk);
-            await _context.SaveChangesAsync();
+            Taikhoan tk = ViewBag.taikhoan;
             //luu dia chi
             Diachi dc = new Diachi();
             dc.MaTk = tk.MaTk;
@@ -240,6 +235,24 @@ namespace ASP_Foody_Ordering.Controllers
                     i.Monan.LuotMua = 1;
                 else
                     i.Monan.LuotMua += 1;
+                var ma = _context.Monans.FirstOrDefault(m => m.MaMa == i.Monan.MaMa);
+                ma.LuotMua = i.Monan.LuotMua;
+                try
+                {
+                    _context.Update(ma);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!MonanExists(ma.MaMa))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
                 _context.Add(ct);
             }
             await _context.SaveChangesAsync();
@@ -331,5 +344,7 @@ namespace ASP_Foody_Ordering.Controllers
             GetInfo();
             return RedirectToAction(nameof(Index));
         }
+
+
     }
 }

@@ -27,11 +27,10 @@ namespace ASP_Foody_Ordering.Models
         public string DienThoai { get; set; }
         [StringLength(50)]
         public string Email { get; set; }
-        [Required]
-        [StringLength(50)]
+        [StringLength(255)]
         public string MatKhau { get; set; }
         public int QuyenHan { get; set; }
-        public int? TrangThai { get; set; }
+        public int TrangThai { get; set; }
 
         [InverseProperty(nameof(Diachi.MaTkNavigation))]
         public virtual ICollection<Diachi> Diachis { get; set; }

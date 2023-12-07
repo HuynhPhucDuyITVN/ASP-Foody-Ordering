@@ -9,16 +9,19 @@ using ASP_Foody_Ordering.Data;
 using ASP_Foody_Ordering.Models;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Identity;
 
 namespace ASP_Foody_Ordering.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IPasswordHasher<Taikhoan> _passwordHasher;
 
-        public HomeController(ApplicationDbContext context)
+        public HomeController(ApplicationDbContext context, IPasswordHasher<Taikhoan> passwordHasher)
         {
             _context = context;
+            _passwordHasher = passwordHasher;
         }
         //GET: Lấy số hàng trong giỏ
         void GetInfo()
@@ -28,6 +31,11 @@ namespace ASP_Foody_Ordering.Controllers
 
             // Danh sach danh muc doc tu db
             ViewBag.danhmuc = _context.Danhmucs.ToList();
+            //Taikhoan luu trong session
+            if (HttpContext.Session.GetString("taikhoan") != "")
+            {
+                ViewBag.taikhoan = _context.Taikhoans.FirstOrDefault(k => k.Email == HttpContext.Session.GetString("taikhoan"));
+            }
         }
         // GET: Home
         public async Task<IActionResult> Index()
@@ -250,6 +258,78 @@ namespace ASP_Foody_Ordering.Controllers
             GetInfo();
             var applicationDbContext = _context.Monans.Where(m => m.MaDm == id);
             return View(await applicationDbContext.ToListAsync());
+        }
+
+        public IActionResult Login()
+        {
+            GetInfo();
+            return View();
+        }
+
+        public IActionResult Register()
+        {
+            GetInfo();
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Register(string email, string ten, string sdt, string matkhau)
+        {
+            var tk = new Taikhoan();
+            if (_context.Taikhoans.FirstOrDefault(m => m.Email == email) == null)
+            {
+                tk.Email = email;
+                tk.Ten = ten;
+                tk.DienThoai = sdt;
+                tk.MatKhau = _passwordHasher.HashPassword(tk, matkhau);
+                _context.Add(tk);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Login));
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Email đã đăng ký xin vui lòng sử dụng email khác!!!";
+                return RedirectToAction(nameof(Register));
+            }
+
+        }
+        [HttpPost]
+        public IActionResult Login(string email, string matkhau)
+        {
+            var tk = _context.Taikhoans.FirstOrDefault(m => m.Email == email);
+            if (tk != null &&
+                _passwordHasher.VerifyHashedPassword(tk, tk.MatKhau, matkhau)
+                == PasswordVerificationResult.Success)
+            {
+                HttpContext.Session.SetString("taikhoan", tk.Email);
+                if (tk.QuyenHan == 1 && tk.TrangThai == 1)
+                    return RedirectToAction(nameof(Admin));
+                else if (tk.QuyenHan == 0 && tk.TrangThai == 1)
+                    return RedirectToAction(nameof(InfoTaiKhoan));
+                else
+                {
+                    TempData["ErrorLogin"] = "Tài khoản đã bị khóa xin vui lòng liên hệ admin để mở khóa lại tài khoản!!!";
+                    return RedirectToAction(nameof(Login));
+                }
+            }
+            TempData["ErrorLogin"] = "Email hoặc mật khẩu không đúng xin vui lòng kiểm tra lại!!!";
+            return RedirectToAction(nameof(Login));
+
+        }
+        public IActionResult InfoTaiKhoan()
+        {
+            GetInfo();
+            return View();
+        }
+        public IActionResult Admin()
+        {
+            GetInfo();
+            return View();
+        }
+        public IActionResult Logout()
+        {
+            HttpContext.Session.SetString("taikhoan", "");
+            GetInfo();
+            return RedirectToAction(nameof(Index));
         }
     }
 }

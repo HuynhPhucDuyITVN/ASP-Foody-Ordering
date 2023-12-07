@@ -1,4 +1,5 @@
 using ASP_Foody_Ordering.Data;
+using ASP_Foody_Ordering.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -37,6 +38,7 @@ namespace ASP_Foody_Ordering
             services.AddControllersWithViews();
             services.AddDistributedMemoryCache();
             services.AddSession();
+            services.AddSingleton<IPasswordHasher<Taikhoan>, PasswordHasher<Taikhoan>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

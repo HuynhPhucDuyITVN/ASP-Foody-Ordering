@@ -125,6 +125,8 @@ namespace ASP_Foody_Ordering.Data
 
                 entity.Property(e => e.MatKhau).IsUnicode(false);
 
+                entity.Property(e => e.QuyenHan).HasDefaultValueSql("((0))");
+
                 entity.Property(e => e.TrangThai).HasDefaultValueSql("((1))");
             });
 

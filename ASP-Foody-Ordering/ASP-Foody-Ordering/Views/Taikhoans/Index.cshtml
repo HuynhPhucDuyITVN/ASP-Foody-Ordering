@@ -5,62 +5,90 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Ten)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DienThoai)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MatKhau)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.QuyenHan)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TrangThai)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ten)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DienThoai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MatKhau)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.QuyenHan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TrangThai)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.MaTk">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.MaTk">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.MaTk">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Danh sách tài khoản</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Admin">Trang chủ</a></li>
+        <li class="breadcrumb-item active">Tài khoản</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            <p>
+                <a class="btn btn-outline-info" asp-action="Create">Thêm mới</a>
+            </p>
+        </div>
+        <div class="card-body">
+            <table id="datatablesSimple">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Ten)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DienThoai)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.QuyenHan)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TrangThai)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Ten)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DienThoai)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.QuyenHan)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TrangThai)
+                        </th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Ten)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DienThoai)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.QuyenHan)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TrangThai)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.MaTk" class="btn btn-outline-warning">Cập nhật</a>
+                                <a asp-action="Details" asp-route-id="@item.MaTk" class="btn btn-outline-info">Chi tiết</a>
+                                <a asp-action="Delete" asp-route-id="@item.MaTk" class="btn btn-outline-danger">Xóa</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

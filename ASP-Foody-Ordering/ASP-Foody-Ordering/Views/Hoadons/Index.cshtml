@@ -31,9 +31,6 @@
                             @Html.DisplayNameFor(model => model.TongTien)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.TrangThai)
-                        </th>
-                        <th>
                             @Html.DisplayNameFor(model => model.MaTkNavigation)
                         </th>
                         <th></th>
@@ -46,9 +43,6 @@
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.TongTien)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.TrangThai)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.MaTkNavigation)
@@ -64,10 +58,7 @@
                                 @Html.DisplayFor(modelItem => item.Ngay)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.TongTien)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.TrangThai)
+                                @item.TongTien.ToString("n0")
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.MaTkNavigation.Ten)

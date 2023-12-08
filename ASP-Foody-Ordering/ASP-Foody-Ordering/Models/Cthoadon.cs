@@ -18,9 +18,9 @@ namespace ASP_Foody_Ordering.Models
         public int MaHd { get; set; }
         [Column("MaMA")]
         public int MaMa { get; set; }
-        public int? DonGia { get; set; }
+        public int DonGia { get; set; }
         public int? SoLuong { get; set; }
-        public int? ThanhTien { get; set; }
+        public int ThanhTien { get; set; }
 
         [ForeignKey(nameof(MaHd))]
         [InverseProperty(nameof(Hoadon.Cthoadons))]

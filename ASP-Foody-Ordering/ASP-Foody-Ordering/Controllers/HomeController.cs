@@ -30,7 +30,7 @@ namespace ASP_Foody_Ordering.Controllers
             ViewData["soluong"] = GetCartItems().Count;
 
             // Danh sach danh muc doc tu db
-            ViewBag.danhmuc = _context.Danhmucs.ToList();
+            ViewBag.danhmuc = _context.Danhmucs.Where(dm=>dm.TrangThai==1).ToList();
             //Taikhoan luu trong session
             if (HttpContext.Session.GetString("taikhoan") != "")
             {
@@ -41,14 +41,14 @@ namespace ASP_Foody_Ordering.Controllers
         public async Task<IActionResult> Index()
         {
             GetInfo();
-            var applicationDbContext = _context.Monans.OrderByDescending(m => m.LuotXem).Take(9);
+            var applicationDbContext = _context.Monans.OrderByDescending(m => m.LuotXem).Where(m => m.MaDmNavigation.TrangThai == 1).Take(9);
             return View(await applicationDbContext.ToListAsync());
         }
         //GET:Menu
         public async Task<IActionResult> Menu()
         {
             GetInfo();
-            var applicationDbContext = _context.Monans.Include(m => m.MaDmNavigation);
+            var applicationDbContext = _context.Monans.Include(m => m.MaDmNavigation).Where(m=>m.MaDmNavigation.TrangThai==1);
             return View(await applicationDbContext.ToListAsync());
         }
         //GET:About

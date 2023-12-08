@@ -59,7 +59,14 @@
                                 <img class="img-thumbnail" style="width:50px" src="~/images/DanhMuc/@Html.DisplayFor(modelItem => item.HinhAnh)" />
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.TrangThai)
+                                @if(item.TrangThai==1)
+                                {
+                                    <a>Còn hoạt động</a>
+                                }
+                                else if(item.TrangThai == 0)
+                                {
+                                    <a>Ngưng hoạt động</a>
+                                }
                             </td>
                             <td>
                                 <a asp-action="Edit" asp-route-id="@item.MaDm" class="btn btn-outline-warning">Cập nhật</a>

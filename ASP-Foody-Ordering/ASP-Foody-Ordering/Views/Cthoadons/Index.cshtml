@@ -73,13 +73,13 @@
                     {
                         <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.DonGia)
+                                @item.DonGia.ToString("n0")
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.SoLuong)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.ThanhTien)
+                                @item.ThanhTien.ToString("n0")
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.MaHdNavigation.MaHd)

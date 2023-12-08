@@ -21,7 +21,7 @@ namespace ASP_Foody_Ordering.Models
         public int MaHd { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? Ngay { get; set; }
-        public int? TongTien { get; set; }
+        public int TongTien { get; set; }
         [Column("MaTK")]
         public int MaTk { get; set; }
         public int? TrangThai { get; set; }

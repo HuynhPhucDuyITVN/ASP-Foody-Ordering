@@ -122,36 +122,6 @@ namespace ASP_Foody_Ordering.Controllers
             return View(monan);
         }
 
-        // GET: Monans/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var monan = await _context.Monans
-                .Include(m => m.MaDmNavigation)
-                .FirstOrDefaultAsync(m => m.MaMa == id);
-            if (monan == null)
-            {
-                return NotFound();
-            }
-
-            return View(monan);
-        }
-
-        // POST: Monans/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var monan = await _context.Monans.FindAsync(id);
-            _context.Monans.Remove(monan);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
         private bool MonanExists(int id)
         {
             return _context.Monans.Any(e => e.MaMa == id);

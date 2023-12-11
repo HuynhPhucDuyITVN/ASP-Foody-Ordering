@@ -127,37 +127,6 @@ namespace ASP_Foody_Ordering.Controllers
             return View(cthoadon);
         }
 
-        // GET: Cthoadons/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var cthoadon = await _context.Cthoadons
-                .Include(c => c.MaHdNavigation)
-                .Include(c => c.MaMaNavigation)
-                .FirstOrDefaultAsync(m => m.MaCthd == id);
-            if (cthoadon == null)
-            {
-                return NotFound();
-            }
-
-            return View(cthoadon);
-        }
-
-        // POST: Cthoadons/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var cthoadon = await _context.Cthoadons.FindAsync(id);
-            _context.Cthoadons.Remove(cthoadon);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
         private bool CthoadonExists(int id)
         {
             return _context.Cthoadons.Any(e => e.MaCthd == id);

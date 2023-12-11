@@ -18,15 +18,20 @@ namespace ASP_Foody_Ordering.Models
         public int MaHd { get; set; }
         [Column("MaMA")]
         public int MaMa { get; set; }
+        [Display(Name = "Đơn giá")]
         public int DonGia { get; set; }
+        [Display(Name = "Số lượng")]
         public int? SoLuong { get; set; }
+        [Display(Name = "Thành tiền")]
         public int ThanhTien { get; set; }
 
         [ForeignKey(nameof(MaHd))]
         [InverseProperty(nameof(Hoadon.Cthoadons))]
+        [Display(Name = "Hóa đơn số")]
         public virtual Hoadon MaHdNavigation { get; set; }
         [ForeignKey(nameof(MaMa))]
         [InverseProperty(nameof(Monan.Cthoadons))]
+        [Display(Name = "Món ăn")]
         public virtual Monan MaMaNavigation { get; set; }
     }
 }

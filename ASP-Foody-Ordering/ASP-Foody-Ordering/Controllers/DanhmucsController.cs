@@ -116,35 +116,6 @@ namespace ASP_Foody_Ordering.Controllers
             return View(danhmuc);
         }
 
-        // GET: Danhmucs/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var danhmuc = await _context.Danhmucs
-                .FirstOrDefaultAsync(m => m.MaDm == id);
-            if (danhmuc == null)
-            {
-                return NotFound();
-            }
-
-            return View(danhmuc);
-        }
-
-        // POST: Danhmucs/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var danhmuc = await _context.Danhmucs.FindAsync(id);
-            _context.Danhmucs.Remove(danhmuc);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
         private bool DanhmucExists(int id)
         {
             return _context.Danhmucs.Any(e => e.MaDm == id);

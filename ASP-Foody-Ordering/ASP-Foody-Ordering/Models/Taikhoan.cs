@@ -22,14 +22,18 @@ namespace ASP_Foody_Ordering.Models
         public int MaTk { get; set; }
         [Required]
         [StringLength(100)]
+        [Display(Name = "Tên tài khoản")]
         public string Ten { get; set; }
         [StringLength(20)]
+        [Display(Name = "Số điện thoại")]
         public string DienThoai { get; set; }
         [StringLength(50)]
         public string Email { get; set; }
         [StringLength(255)]
         public string MatKhau { get; set; }
+        [Display(Name = "Quyền hạn")]
         public int QuyenHan { get; set; }
+        [Display(Name = "Trạng thái")]
         public int TrangThai { get; set; }
 
         [InverseProperty(nameof(Diachi.MaTkNavigation))]

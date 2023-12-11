@@ -115,36 +115,6 @@ namespace ASP_Foody_Ordering.Controllers
             }
             return View(taikhoan);
         }
-
-        // GET: Taikhoans/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var taikhoan = await _context.Taikhoans
-                .FirstOrDefaultAsync(m => m.MaTk == id);
-            if (taikhoan == null)
-            {
-                return NotFound();
-            }
-
-            return View(taikhoan);
-        }
-
-        // POST: Taikhoans/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var taikhoan = await _context.Taikhoans.FindAsync(id);
-            _context.Taikhoans.Remove(taikhoan);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
         private bool TaikhoanExists(int id)
         {
             return _context.Taikhoans.Any(e => e.MaTk == id);

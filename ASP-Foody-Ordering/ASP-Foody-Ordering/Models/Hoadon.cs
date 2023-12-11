@@ -20,7 +20,9 @@ namespace ASP_Foody_Ordering.Models
         [Column("MaHD")]
         public int MaHd { get; set; }
         [Column(TypeName = "datetime")]
+        [Display(Name = "Ngày tạo")]
         public DateTime? Ngay { get; set; }
+        [Display(Name = "Tổng tiền")]
         public int TongTien { get; set; }
         [Column("MaTK")]
         public int MaTk { get; set; }
@@ -28,6 +30,7 @@ namespace ASP_Foody_Ordering.Models
 
         [ForeignKey(nameof(MaTk))]
         [InverseProperty(nameof(Taikhoan.Hoadons))]
+        [Display(Name = "Khách hàng")]
         public virtual Taikhoan MaTkNavigation { get; set; }
         [InverseProperty(nameof(Cthoadon.MaHdNavigation))]
         public virtual ICollection<Cthoadon> Cthoadons { get; set; }

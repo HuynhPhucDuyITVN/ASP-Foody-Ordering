@@ -509,12 +509,10 @@ C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\ASP-Foody-Ordering.RazorCoreGenerate.cache
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Cthoadons\Create.cshtml.g.cs
-C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Cthoadons\Delete.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Cthoadons\Details.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Cthoadons\Edit.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Cthoadons\Index.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Danhmucs\Create.cshtml.g.cs
-C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Danhmucs\Delete.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Danhmucs\Details.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Danhmucs\Edit.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Danhmucs\Index.cshtml.g.cs
@@ -524,7 +522,6 @@ C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Diachis\Edit.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Diachis\Index.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Hoadons\Create.cshtml.g.cs
-C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Hoadons\Delete.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Hoadons\Details.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Hoadons\Edit.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Hoadons\Index.cshtml.g.cs
@@ -542,7 +539,6 @@ C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\Register.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\ViewCart.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Monans\Create.cshtml.g.cs
-C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Monans\Delete.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Monans\Details.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Monans\Edit.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Monans\Index.cshtml.g.cs
@@ -552,7 +548,6 @@ C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Taikhoans\Create.cshtml.g.cs
-C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Taikhoans\Delete.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Taikhoans\Details.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Taikhoans\Edit.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Taikhoans\Index.cshtml.g.cs

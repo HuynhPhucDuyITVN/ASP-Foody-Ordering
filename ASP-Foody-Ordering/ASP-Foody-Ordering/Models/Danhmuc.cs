@@ -21,9 +21,12 @@ namespace ASP_Foody_Ordering.Models
         public int MaDm { get; set; }
         [Required]
         [StringLength(100)]
+        [Display(Name = "Danh mục")]
         public string Ten { get; set; }
         [StringLength(255)]
+        [Display(Name = "Hình ảnh")]
         public string HinhAnh { get; set; }
+        [Display(Name = "Trạng thái")]
         public int? TrangThai { get; set; }
 
         [InverseProperty(nameof(Monan.MaDmNavigation))]

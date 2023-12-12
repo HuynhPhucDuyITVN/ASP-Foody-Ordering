@@ -15,7 +15,7 @@
                         @if (caterogy.Contains(item.MaDmNavigation.Ten) == false)
                         {
                             caterogy.Add(item.MaDmNavigation.Ten);
-                            <h2>Danh sách món ăn thuộc @item.MaDmNavigation.Ten</h2>
+                            <h2 class="text-uppercase">Danh sách món ăn thuộc @item.MaDmNavigation.Ten</h2>
                         }
 
                     }
@@ -26,7 +26,7 @@
                 @foreach (var i in (List<Danhmuc>)ViewBag.danhmuc)
                 {
                     <a class="text-black-50" asp-action="MonAnTheoDanhMuc" asp-route-id="@i.MaDm">
-                    <li>@i.Ten</li></a>
+                    <li class="text-uppercase">@i.Ten</li></a>
                 }
             }
         </ul>
@@ -47,10 +47,10 @@
                                     <a class="text-decoration-none" asp-action="Details" asp-route-id="@item.MaMa"><img src="~/images/MonAn/@Html.DisplayFor(modelItem => item.HinhAnh)" /></a>
                                 </div>
                                 <div class="detail-box">
-                                    <h5>
-                                        <a class="text-decoration-none text-white" asp-action="Details" asp-route-id="@item.MaMa">@Html.DisplayFor(modelItem => item.Ten)</a>
+                                    <h5  style="width: 300px; overflow: hidden; text-overflow: ellipsis; line-height: 20px; -webkit-line-clamp: 1; display: -webkit-box; -webkit-box-orient: vertical; ">
+                                        <a class="text-decoration-none text-white text-uppercase" asp-action="Details" asp-route-id="@item.MaMa">@Html.DisplayFor(modelItem => item.Ten)</a>
                                     </h5>
-                                    <p style="width: 200px; overflow: hidden; text-overflow: ellipsis; line-height: 20px; -webkit-line-clamp: 5; display: -webkit-box; -webkit-box-orient: vertical; ">
+                                    <p style="width: 300px; overflow: hidden; text-overflow: ellipsis; line-height: 20px; -webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical; ">
                                         @Html.DisplayFor(modelItem => item.MoTa)
                                     </p>
                                     <div class="options">

@@ -42,6 +42,7 @@ namespace ASP_Foody_Ordering.Models
 
         [ForeignKey(nameof(MaDm))]
         [InverseProperty(nameof(Danhmuc.Monans))]
+        [Display(Name = "Danh mục")]
         public virtual Danhmuc MaDmNavigation { get; set; }
         [InverseProperty(nameof(Cthoadon.MaMaNavigation))]
         public virtual ICollection<Cthoadon> Cthoadons { get; set; }

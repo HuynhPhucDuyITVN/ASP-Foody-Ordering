@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ASP_Foody_Ordering.Data;
 using ASP_Foody_Ordering.Models;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace ASP_Foody_Ordering.Controllers
 {
@@ -86,7 +88,7 @@ namespace ASP_Foody_Ordering.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MaDm,Ten,HinhAnh,TrangThai")] Danhmuc danhmuc)
+        public async Task<IActionResult> Edit(int id, IFormFile file, [Bind("MaDm,Ten,HinhAnh,TrangThai")] Danhmuc danhmuc)
         {
             if (id != danhmuc.MaDm)
             {
@@ -97,6 +99,10 @@ namespace ASP_Foody_Ordering.Controllers
             {
                 try
                 {
+                    if (file != null)
+                    {
+                        danhmuc.HinhAnh = Upload(file);
+                    }
                     _context.Update(danhmuc);
                     await _context.SaveChangesAsync();
                 }
@@ -114,6 +120,20 @@ namespace ASP_Foody_Ordering.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(danhmuc);
+        }
+        public string Upload(IFormFile file)
+        {
+            string uploadFileName = null;
+            if (file != null)
+            {
+                uploadFileName = Guid.NewGuid().ToString() + "_" + file.FileName;
+                var path = $"wwwroot\\images\\DanhMuc\\{uploadFileName}";
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+            }
+            return uploadFileName;
         }
 
         private bool DanhmucExists(int id)

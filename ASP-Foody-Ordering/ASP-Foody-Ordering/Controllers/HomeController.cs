@@ -30,7 +30,7 @@ namespace ASP_Foody_Ordering.Controllers
             ViewData["soluong"] = GetCartItems().Count;
 
             // Danh sach danh muc doc tu db
-            ViewBag.danhmuc = _context.Danhmucs.Where(dm=>dm.TrangThai==1).ToList();
+            ViewBag.danhmuc = _context.Danhmucs.Where(dm => dm.TrangThai == 1).ToList();
             //Danh sach mon an theo luot mua
             ViewBag.luotmua = _context.Monans.OrderByDescending(m => m.LuotMua).Where(m => m.MaDmNavigation.TrangThai == 1).Take(6).ToList();
             //Taikhoan luu trong session
@@ -50,7 +50,7 @@ namespace ASP_Foody_Ordering.Controllers
         public async Task<IActionResult> Menu()
         {
             GetInfo();
-            var applicationDbContext = _context.Monans.Include(m => m.MaDmNavigation).Where(m=>m.MaDmNavigation.TrangThai==1);
+            var applicationDbContext = _context.Monans.Include(m => m.MaDmNavigation).Where(m => m.MaDmNavigation.TrangThai == 1);
             return View(await applicationDbContext.ToListAsync());
         }
         //GET:About
@@ -347,6 +347,108 @@ namespace ASP_Foody_Ordering.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        // GET: Taikhoans/Edit/5
+        public async Task<IActionResult> EditTK(int? id)
+        {
+            GetInfo();
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var taikhoan = await _context.Taikhoans.FindAsync(id);
+            if (taikhoan == null)
+            {
+                return NotFound();
+            }
+            return View(taikhoan);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditTK(int id, [Bind("MaTk,Ten,DienThoai,Email,MatKhau,QuyenHan,TrangThai")] Taikhoan taikhoan)
+        {
+            if (id != taikhoan.MaTk)
+            {
+                return NotFound();
+            }
 
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(taikhoan);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!TaikhoanExists(taikhoan.MaTk))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                HttpContext.Session.SetString("taikhoan", "");
+                return RedirectToAction(nameof(Login));
+            }
+            return View(taikhoan);
+        }
+        private bool TaikhoanExists(int id)
+        {
+            return _context.Taikhoans.Any(e => e.MaTk == id);
+        }
+
+        public async Task<IActionResult> DoiMK(int? id)
+        {
+            GetInfo();
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var taikhoan = await _context.Taikhoans.FindAsync(id);
+            if (taikhoan == null)
+            {
+                return NotFound();
+            }
+            return View(taikhoan);
+        }
+        [HttpPost]
+        public async Task<IActionResult> DoiMK(int? id, string matkhaucu, string matkhaumoi, string xacnhanmatkhau)
+        {
+            GetInfo();
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var taikhoan = await _context.Taikhoans.FindAsync(id);
+            if (taikhoan == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                if(_passwordHasher.VerifyHashedPassword(taikhoan, taikhoan.MatKhau, matkhaucu)
+                == PasswordVerificationResult.Success)
+                {
+                    if(matkhaumoi==matkhaucu)
+                    {
+
+                    }
+                    else
+                    {
+                        TempData["doimk"] = "Xác nhận mật khẩu không khớp";
+                        return RedirectToAction(nameof(DoiMK));
+                    }
+
+                }
+                else
+                {
+                    TempData["doimk"] = "Mật khẩu cũ không chính xác vui lòng nhập lại";
+                    return RedirectToAction(nameof(DoiMK));
+                }
+            }
+            return View(taikhoan);
+        }
     }
 }

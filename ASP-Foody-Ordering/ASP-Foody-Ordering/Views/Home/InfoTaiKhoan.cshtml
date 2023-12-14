@@ -1,32 +1,35 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Thông tin khách hàng";
 }
-
-<div class="container mt-5">
-    <h3 class="text-center mb-4">Chào @ViewBag.taikhoan.Ten!</h3>
-
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card shadow">
-                <div class="card-header bg-info text-white text-center">
-                    <h3>Thông tin khách hàng</h3>
-                </div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><strong>Email:</strong> @ViewBag.taikhoan.Email</li>
-                        <li class="list-group-item"><strong>Điện thoại:</strong> @ViewBag.taikhoan.DienThoai</li>
-                    </ul>
-                </div>
-                <div class="card-footer text-center">
-                    <a asp-action="Logout" class="btn btn-danger">Đăng xuất</a>
-                </div>
-                @if (ViewBag.taikhoan.QuyenHan == 1)
-                {
-                    <div class="card-footer text-center">
-                        <a asp-action="Admin" class="btn btn-danger">Quản trị</a>
+<section class="py-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header bg-info text-white text-center">
+                        <h3>Thông tin khách hàng</h3>
                     </div>
-                }
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Tên:</strong> @ViewBag.taikhoan.Ten</li>
+                            <li class="list-group-item"><strong>Email:</strong> @ViewBag.taikhoan.Email</li>
+                            <li class="list-group-item"><strong>Điện thoại:</strong> @ViewBag.taikhoan.DienThoai</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a asp-action="Logout" class="btn btn-danger">Đăng xuất</a>
+                        <a asp-action="EditTK" asp-route-id="@ViewBag.taikhoan.MaTk" class="btn btn-info">Cập nhật thông tin</a>
+                        @if (ViewBag.taikhoan.QuyenHan == 1)
+                        {
+                            <a asp-action="Admin" class="btn btn-warning">Quản trị</a>
+                        }
+                    </div>
+                    <div class="card-footer text-center">
+                        <small><a asp-controller="Home" asp-action="DoiMK" asp-route-id="@ViewBag.taikhoan.MaTk">Đổi mật khẩu?</a></small>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>

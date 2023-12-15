@@ -5,53 +5,70 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Edit</h1>
 
-<h4>Taikhoan</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="MaTk" />
-            <div class="form-group">
-                <label asp-for="Ten" class="control-label"></label>
-                <input asp-for="Ten" class="form-control" />
-                <span asp-validation-for="Ten" class="text-danger"></span>
+<section class="py-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header bg-info text-white text-center">
+                        <h3>Cập nhật tài khoản</h3>
+                    </div>
+                    <div class="card-body">
+                        <form asp-action="Edit">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="MaTk" />
+                            <div class="form-group">
+                                <label asp-for="Ten" class="control-label"></label>
+                                <input asp-for="Ten" class="form-control" required />
+                                <span asp-validation-for="Ten" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="DienThoai" class="control-label"></label>
+                                <input asp-for="DienThoai" class="form-control" required />
+                                <span asp-validation-for="DienThoai" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Email" class="control-label"></label>
+                                <input asp-for="Email" class="form-control" required disabled/>
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group" style="display:none">
+                                <label asp-for="MatKhau" class="control-label"></label>
+                                <input asp-for="MatKhau" class="form-control" />
+                                <span asp-validation-for="MatKhau" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="QuyenHan" class="control-label"></label>
+                                <select asp-for="QuyenHan" class="form-control">
+                                    <option value="1">Quản trị viên</option>
+                                    <option value="0">Khách hàng</option>
+                                </select>
+                                <span asp-validation-for="QuyenHan" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="TrangThai" class="control-label"></label>
+                                <select asp-for="TrangThai" class="form-control">
+                                    <option value="1">Còn hoạt động</option>
+                                    <option value="0">Ngưng hoạt động</option>
+                                </select>
+                                <span asp-validation-for="TrangThai" class="text-danger"></span>
+                            </div>
+                            <br />
+                            <div class="d-grid form-group">
+                                <input type="submit" value="Lưu" class="btn btn-info btn btn-block" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a asp-action="Index" class="btn btn-info">Quay về</a>
+                        <br />
+                        <small><a asp-action="DoiMK" asp-route-id="@Model.MaTk">Đổi mật khẩu?</a></small>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="DienThoai" class="control-label"></label>
-                <input asp-for="DienThoai" class="form-control" />
-                <span asp-validation-for="DienThoai" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MatKhau" class="control-label"></label>
-                <input asp-for="MatKhau" class="form-control" />
-                <span asp-validation-for="MatKhau" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QuyenHan" class="control-label"></label>
-                <input asp-for="QuyenHan" class="form-control" />
-                <span asp-validation-for="QuyenHan" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TrangThai" class="control-label"></label>
-                <input asp-for="TrangThai" class="form-control" />
-                <span asp-validation-for="TrangThai" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
+</section>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 

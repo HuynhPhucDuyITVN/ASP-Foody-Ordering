@@ -5,51 +5,46 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Taikhoan</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Ten)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Ten)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DienThoai)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DienThoai)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MatKhau)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MatKhau)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.QuyenHan)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.QuyenHan)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TrangThai)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TrangThai)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.MaTk">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+<section class="py-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header bg-info text-white text-center">
+                        <h3>Thông tin tài khoản</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Tên:</strong>  @Html.DisplayFor(model => model.Ten)</li>
+                            <li class="list-group-item"><strong>Email:</strong> @Html.DisplayFor(model => model.Email)</li>
+                            <li class="list-group-item"><strong>Điện thoại:</strong> @Html.DisplayFor(model => model.DienThoai)</li>
+                            @if (Model.QuyenHan == 1)
+                            {
+                                <li class="list-group-item"><strong>Quyền hạn:</strong> Quản trị viên</li>
+                            }
+                            else
+                            {
+                                <li class="list-group-item"><strong>Quyền hạn:</strong> Khách hàng</li>
+                            }
+                            @if (Model.TrangThai == 1)
+                            {
+                                <li class="list-group-item"><strong>Trạng thái:</strong> Còn hoạt động</li>
+                            }
+                            else
+                            {
+                                <li class="list-group-item"><strong>Trạng thái:</strong> Ngưng hoạt động </li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a asp-action="Edit" asp-route-id="@Model.MaTk" class="btn btn-warning">Cập nhật thông tin</a>
+                        <a asp-action="Index" class="btn btn-info">Quay về</a>
+                    </div>
+                    <div class="card-footer text-center">
+                        <small><a asp-action="DoiMK" asp-route-id="@Model.MaTk">Đổi mật khẩu?</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

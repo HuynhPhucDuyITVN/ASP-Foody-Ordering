@@ -26,6 +26,7 @@ namespace ASP_Foody_Ordering.Models
         public int TongTien { get; set; }
         [Column("MaTK")]
         public int MaTk { get; set; }
+        [Display(Name = "Trạng thái")]
         public int? TrangThai { get; set; }
 
         [ForeignKey(nameof(MaTk))]

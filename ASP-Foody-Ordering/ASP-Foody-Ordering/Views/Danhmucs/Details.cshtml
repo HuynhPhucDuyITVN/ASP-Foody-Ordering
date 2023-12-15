@@ -5,33 +5,38 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Danhmuc</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Ten)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Ten)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.HinhAnh)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.HinhAnh)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TrangThai)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TrangThai)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.MaDm">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div id="layoutAuthentication_content">
+    <main>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="card shadow-lg border-0 rounded-lg mt-5">
+                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Chi tiết Danh mục</h3></div>
+                        <div class="card-body">
+                            <img src="~/images/DanhMuc/@Html.DisplayFor(model => model.HinhAnh)" alt="project-image" class="rounded  mx-auto d-block">
+                            <div class="project-info-box text-center">
+                                <p><b>Danh mục: </b>@Html.DisplayFor(model => model.Ten)</p>
+                                @if (Model.TrangThai == 1)
+                                {
+                                    <p>
+                                        <b>Trạng thái: </b>Còn hoạt động
+                                    </p>
+                                }
+                                else if (Model.TrangThai == 0)
+                                {
+                                    <p>
+                                        <b>Trạng thái: </b>Ngưng hoạt động
+                                    </p>
+                                }
+                            </div><!-- / project-info-box -->
+                        </div>
+                        <div class="card-footer text-center py-3">
+                            <a asp-action="Index" class="btn btn-outline-info">Quay về</a>
+                            <a asp-action="Edit" asp-route-id="@Model.MaDm" class="btn btn-outline-warning">Cập nhật</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </div>

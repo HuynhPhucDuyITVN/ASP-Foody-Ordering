@@ -6,50 +6,50 @@
 }
 
 
-    <div id="layoutAuthentication_content">
-        <main>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-7">
-                        <div class="card shadow-lg border-0 rounded-lg mt-5">
-                            <div class="card-header"><h3 class="text-center font-weight-light my-4">Cập nhật Danh mục</h3></div>
-                            <div class="card-body">
-                                <form asp-action="Edit" enctype="multipart/form-data">
-                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                                    <input type="hidden" asp-for="MaDm" />
-                                    <div class="form-group">
-                                        <label asp-for="Ten" class="control-label"></label>
-                                        <input asp-for="Ten" class="form-control" />
-                                        <span asp-validation-for="Ten" class="text-danger"></span>
-                                    </div>
-                                    <br />
-                                    <div class="form-group">
-                                        <label asp-for="HinhAnh" class="control-label"></label>
-                                        <input type="hidden" asp-for="HinhAnh" class="form-control" />
-                                        <input type="file" name="file" />
-                                        <span asp-validation-for="HinhAnh" class="text-danger"></span>
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <label asp-for="TrangThai" class="control-label"></label>
-                                        <select asp-for="TrangThai" class="form-control">
-                                            <option value="1">Còn hoạt động</option>
-                                            <option value="0">Ngưng hoạt động</option>
-                                        </select>
-                                        <span asp-validation-for="TrangThai" class="text-danger"></span>
-                                    </div>
-                                    <br />
-                                    <div class="d-grid">
-                                        <input type="submit" value="Lưu" class="btn btn-info btn btn-block" />
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="card-footer text-center py-3">
-                                <a asp-action="Index" class="btn btn-outline-info">Back to List</a>
-                            </div>
+<div id="layoutAuthentication_content">
+    <main>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="card shadow-lg border-0 rounded-lg mt-5">
+                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Cập nhật Danh mục</h3></div>
+                        <div class="card-body">
+                            <form asp-action="Edit" enctype="multipart/form-data">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <input type="hidden" asp-for="MaDm" />
+                                <div class="form-group">
+                                    <label asp-for="Ten" class="control-label"></label>
+                                    <input asp-for="Ten" class="form-control" />
+                                    <span asp-validation-for="Ten" class="text-danger"></span>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <label asp-for="HinhAnh" class="control-label"></label>
+                                    <input type="hidden" asp-for="HinhAnh" class="form-control" />
+                                    <input type="file" name="file" />
+                                    <span asp-validation-for="HinhAnh" class="text-danger"></span>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label asp-for="TrangThai" class="control-label"></label>
+                                    <select asp-for="TrangThai" class="form-control">
+                                        <option value="1">Còn hoạt động</option>
+                                        <option value="0">Ngưng hoạt động</option>
+                                    </select>
+                                    <span asp-validation-for="TrangThai" class="text-danger"></span>
+                                </div>
+                                <br />
+                                <div class="d-grid">
+                                    <input type="submit" value="Lưu" class="btn btn-info btn btn-block" />
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer text-center py-3">
+                            <a asp-action="Index" class="btn btn-outline-info">Quay về</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
-    </div>
+        </div>
+    </main>
+</div>

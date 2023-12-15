@@ -56,10 +56,14 @@ namespace ASP_Foody_Ordering.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MaDm,Ten,HinhAnh,TrangThai")] Danhmuc danhmuc)
+        public async Task<IActionResult> Create([Bind("MaDm,Ten,HinhAnh,TrangThai")] Danhmuc danhmuc,IFormFile file)
         {
             if (ModelState.IsValid)
             {
+                if (file != null)
+                {
+                    danhmuc.HinhAnh = Upload(file);
+                }
                 _context.Add(danhmuc);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

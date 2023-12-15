@@ -759,3 +759,5 @@ C:\Users\Home\Documents\ASPTEST\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-
 C:\Users\Home\Documents\ASPTEST\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\ASP-Foody-Ordering.genruntimeconfig.cache
 C:\Users\Home\Documents\ASPTEST\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\EditTK.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\DoiMK.cshtml.g.cs
+C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\DoiMK.cshtml.g.cs
+C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\EditTK.cshtml.g.cs

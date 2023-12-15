@@ -431,9 +431,27 @@ namespace ASP_Foody_Ordering.Controllers
                 if(_passwordHasher.VerifyHashedPassword(taikhoan, taikhoan.MatKhau, matkhaucu)
                 == PasswordVerificationResult.Success)
                 {
-                    if(matkhaumoi==matkhaucu)
+                    if (matkhaumoi == xacnhanmatkhau)
                     {
-
+                        try
+                        {
+                            taikhoan.MatKhau = _passwordHasher.HashPassword(taikhoan, matkhaumoi);
+                            _context.Update(taikhoan);
+                            await _context.SaveChangesAsync();
+                        }
+                        catch (DbUpdateConcurrencyException)
+                        {
+                            if (!TaikhoanExists(taikhoan.MaTk))
+                            {
+                                return NotFound();
+                            }
+                            else
+                            {
+                                throw;
+                            }
+                        }
+                        HttpContext.Session.SetString("taikhoan", "");
+                        return RedirectToAction(nameof(Login));
                     }
                     else
                     {

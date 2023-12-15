@@ -5,63 +5,74 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Edit</h1>
 
-<h4>Monan</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="MaMa" />
-            <div class="form-group">
-                <label asp-for="Ten" class="control-label"></label>
-                <input asp-for="Ten" class="form-control" />
-                <span asp-validation-for="Ten" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="GiaGoc" class="control-label"></label>
-                <input asp-for="GiaGoc" class="form-control" />
-                <span asp-validation-for="GiaGoc" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="GiaBan" class="control-label"></label>
-                <input asp-for="GiaBan" class="form-control" />
-                <span asp-validation-for="GiaBan" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MoTa" class="control-label"></label>
-                <input asp-for="MoTa" class="form-control" />
-                <span asp-validation-for="MoTa" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="HinhAnh" class="control-label"></label>
-                <input asp-for="HinhAnh" class="form-control" />
-                <span asp-validation-for="HinhAnh" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MaDm" class="control-label"></label>
-                <select asp-for="MaDm" class="form-control" asp-items="ViewBag.MaDm"></select>
-                <span asp-validation-for="MaDm" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LuotXem" class="control-label"></label>
-                <input asp-for="LuotXem" class="form-control" />
-                <span asp-validation-for="LuotXem" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LuotMua" class="control-label"></label>
-                <input asp-for="LuotMua" class="form-control" />
-                <span asp-validation-for="LuotMua" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+<div id="layoutAuthentication_content">
+    <main>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="card shadow-lg border-0 rounded-lg mt-5">
+                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Cập nhật Món ăn</h3></div>
+                        <div class="card-body">
 
-<div>
-    <a asp-action="Index">Back to List</a>
+                            <form asp-action="Edit" enctype="multipart/form-data">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <input type="hidden" asp-for="MaMa" />
+                                <div class="form-group">
+                                    <label asp-for="Ten" class="control-label"></label>
+                                    <input asp-for="Ten" class="form-control" required/>
+                                    <span asp-validation-for="Ten" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="GiaGoc" class="control-label"></label>
+                                    <input asp-for="GiaGoc" class="form-control" required />
+                                    <span asp-validation-for="GiaGoc" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="GiaBan" class="control-label"></label>
+                                    <input asp-for="GiaBan" class="form-control" required />
+                                    <span asp-validation-for="GiaBan" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="MoTa" class="control-label"></label>
+                                    <input asp-for="MoTa" class="form-control" required />
+                                    <span asp-validation-for="MoTa" class="text-danger"></span>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <label asp-for="HinhAnh" class="control-label"></label>
+                                    <input type="hidden" asp-for="HinhAnh" class="form-control" />
+                                    <input type="file" name="file"  class="form-control-file"/>
+                                    <span asp-validation-for="HinhAnh" class="text-danger"></span>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <select asp-for="MaDm" class="form-control" asp-items="ViewBag.MaDm"></select>
+                                    <span asp-validation-for="MaDm" class="text-danger"></span>
+                                </div>
+                                <br />
+                                <div class="form-group" style="display: none;">
+                                    <label asp-for="LuotXem" class="control-label"></label>
+                                    <input asp-for="LuotXem" class="form-control" />
+                                    <span asp-validation-for="LuotXem" class="text-danger"></span>
+                                </div>
+                                <div class="form-group" style="display: none;">
+                                    <label asp-for="LuotMua" class="control-label"></label>
+                                    <input asp-for="LuotMua" class="form-control" />
+                                    <span asp-validation-for="LuotMua" class="text-danger"></span>
+                                </div>
+                                <div class="d-grid">
+                                    <input type="submit" value="Lưu" class="btn btn-info btn btn-block" />
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer text-center py-3">
+                            <a asp-action="Index" class="btn btn-outline-info">Quay về</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </div>
 

@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ASP_Foody_Ordering.Data;
 using ASP_Foody_Ordering.Models;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace ASP_Foody_Ordering.Controllers
 {
@@ -57,10 +59,14 @@ namespace ASP_Foody_Ordering.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MaMa,Ten,GiaGoc,GiaBan,MoTa,HinhAnh,MaDm,LuotXem,LuotMua")] Monan monan)
+        public async Task<IActionResult> Create([Bind("MaMa,Ten,GiaGoc,GiaBan,MoTa,HinhAnh,MaDm,LuotXem,LuotMua")] Monan monan, IFormFile file)
         {
             if (ModelState.IsValid)
             {
+                if (file != null)
+                {
+                    monan.HinhAnh = Upload(file);
+                }
                 _context.Add(monan);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -91,7 +97,7 @@ namespace ASP_Foody_Ordering.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MaMa,Ten,GiaGoc,GiaBan,MoTa,HinhAnh,MaDm,LuotXem,LuotMua")] Monan monan)
+        public async Task<IActionResult> Edit(int id, [Bind("MaMa,Ten,GiaGoc,GiaBan,MoTa,HinhAnh,MaDm,LuotXem,LuotMua")] Monan monan,IFormFile file)
         {
             if (id != monan.MaMa)
             {
@@ -102,6 +108,10 @@ namespace ASP_Foody_Ordering.Controllers
             {
                 try
                 {
+                    if (file != null)
+                    {
+                        monan.HinhAnh = Upload(file);
+                    }
                     _context.Update(monan);
                     await _context.SaveChangesAsync();
                 }
@@ -120,6 +130,21 @@ namespace ASP_Foody_Ordering.Controllers
             }
             ViewData["MaDm"] = new SelectList(_context.Danhmucs, "MaDm", "Ten", monan.MaDm);
             return View(monan);
+        }
+
+        public string Upload(IFormFile file)
+        {
+            string uploadFileName = null;
+            if (file != null)
+            {
+                uploadFileName = Guid.NewGuid().ToString() + "_" + file.FileName;
+                var path = $"wwwroot\\images\\MonAn\\{uploadFileName}";
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+            }
+            return uploadFileName;
         }
 
         private bool MonanExists(int id)

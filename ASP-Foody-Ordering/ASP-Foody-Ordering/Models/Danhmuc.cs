@@ -16,6 +16,7 @@ namespace ASP_Foody_Ordering.Models
             Monans = new HashSet<Monan>();
         }
 
+        [Display(Name = "Danh mục")]
         [Key]
         [Column("MaDM")]
         public int MaDm { get; set; }

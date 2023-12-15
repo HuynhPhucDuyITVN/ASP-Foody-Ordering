@@ -40,9 +40,9 @@ namespace ASP_Foody_Ordering.Models
         [Display(Name = "Lượt mua")]
         public int? LuotMua { get; set; }
 
+        [Display(Name = "Danh mục")]
         [ForeignKey(nameof(MaDm))]
         [InverseProperty(nameof(Danhmuc.Monans))]
-        [Display(Name = "Danh mục")]
         public virtual Danhmuc MaDmNavigation { get; set; }
         [InverseProperty(nameof(Cthoadon.MaMaNavigation))]
         public virtual ICollection<Cthoadon> Cthoadons { get; set; }

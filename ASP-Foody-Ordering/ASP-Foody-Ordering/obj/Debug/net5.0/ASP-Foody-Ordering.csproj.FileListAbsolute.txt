@@ -761,20 +761,16 @@ C:\Users\Home\Documents\ASPTEST\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-
 C:\Users\Home\Documents\ASPTEST\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\DoiMK.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\DoiMK.cshtml.g.cs
 C:\Users\Home\Documents\ASPTEST\Fix UI and some little thing\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\EditTK.cshtml.g.cs
-C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Cthoadons\Create.cshtml.g.cs
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Cthoadons\Details.cshtml.g.cs
-C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Cthoadons\Edit.cshtml.g.cs
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Cthoadons\Index.cshtml.g.cs
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Danhmucs\Create.cshtml.g.cs
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Danhmucs\Details.cshtml.g.cs
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Danhmucs\Edit.cshtml.g.cs
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Danhmucs\Index.cshtml.g.cs
-C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Diachis\Create.cshtml.g.cs
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Diachis\Delete.cshtml.g.cs
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Diachis\Details.cshtml.g.cs
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Diachis\Edit.cshtml.g.cs
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Diachis\Index.cshtml.g.cs
-C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Hoadons\Create.cshtml.g.cs
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Hoadons\Details.cshtml.g.cs
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Hoadons\Edit.cshtml.g.cs
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Hoadons\Index.cshtml.g.cs
@@ -1186,3 +1182,6 @@ C:\Users\Home\Documents\ASP\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Orde
 C:\Users\Home\Documents\ASP\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\ASP-Foody-Ordering.genruntimeconfig.cache
 C:\Users\Home\Documents\ASP\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Taikhoans\DoiMK.cshtml.g.cs
 C:\Users\Home\Documents\ASP\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Hoadons\Edit.cshtml.g.cs
+C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Taikhoans\DoiMK.cshtml.g.cs
+C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\Hoadon.cshtml.g.cs
+C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\Chitiethoadon.cshtml.g.cs

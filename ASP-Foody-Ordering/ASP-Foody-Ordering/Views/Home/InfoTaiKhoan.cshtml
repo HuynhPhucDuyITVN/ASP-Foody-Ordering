@@ -24,6 +24,10 @@
                         {
                             <a asp-action="Admin" class="btn btn-warning">Quản trị</a>
                         }
+                        else
+                        {
+                            <a asp-action="Hoadon" asp-route-id="@ViewBag.taikhoan.MaTk" class="btn btn-success">Hóa đơn</a>
+                        }
                     </div>
                     <div class="card-footer text-center">
                         <small><a asp-controller="Home" asp-action="DoiMK" asp-route-id="@ViewBag.taikhoan.MaTk">Đổi mật khẩu?</a></small>

@@ -1,6 +1,20 @@
 ﻿@model ASP_Foody_Ordering.Models.Hoadon
-    <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-1">
-            <h3>Đơn hàng mã số @Model.MaHd trị giá @Model.TongTien đã được hệ thống ghi nhận </h3>
+<section class="py-5">
+    <div class="container-fluid px-4">
+        <div class="card mb-4">
+            <div class="card-header text-center">
+                <h1 class="mt-4 text-center">Đơn hàng được tạo thành công</h1>
+            </div>
+            <div class="card-body text-center">
+                <h3>Đơn hàng mã số @Model.MaHd trị giá @Model.TongTien đã được hệ thống ghi nhận. </h3>
+                <br />
+                <h3>Vui lòng kiểm tra Email @Model.MaTkNavigation.Email để được liên hệ sớm nhất.</h3>
+            </div>
+            <div class="card-footer text-center">
+                <a asp-action="Index" class="btn btn-outline-success">Quay về trang chủ</a>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
+

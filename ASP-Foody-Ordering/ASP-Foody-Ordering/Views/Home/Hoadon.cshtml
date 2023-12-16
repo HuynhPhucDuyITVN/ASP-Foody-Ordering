@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ASP_Foody_Ordering.Models.Hoadon>
+
+<div class="container-fluid px-4">
+    <div class="card mb-4">
+        <div class="card-header">
+            <h1 class="mt-4">Danh sách hóa đơn</h1>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Ngay)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TongTien)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MaTkNavigation)
+                        </th>
+                        <th> 
+                            @Html.DisplayNameFor(model => model.TrangThai)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Ngay)
+                            </td>
+                            <td>
+                                @item.TongTien.ToString("n0")
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaTkNavigation.Ten)
+                            </td>
+                            @if (item.TrangThai==0)
+                            {
+                                <td>Đã tạo đơn hàng</td>
+                            }
+                            else if (item.TrangThai==1)
+                            {
+                                <td>Đã giao hàng</td>
+                            }
+                            else
+                            {
+                                <td>Đã hủy đơn hàng</td>
+                            }
+                            <td>
+                                <a asp-action="Chitiethoadon" asp-route-id="@item.MaHd" class="btn btn-outline-info">Chi tiết</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

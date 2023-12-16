@@ -126,7 +126,7 @@ namespace ASP_Foody_Ordering.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Logout", "Home");
             }
             return View(taikhoan);
         }
@@ -186,7 +186,7 @@ namespace ASP_Foody_Ordering.Controllers
                                 throw;
                             }
                         }
-                        return RedirectToAction(nameof(Index));
+                        return RedirectToAction("Logout","Home");
                     }
                     else
                     {

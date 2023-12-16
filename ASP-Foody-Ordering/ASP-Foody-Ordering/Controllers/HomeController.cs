@@ -24,7 +24,7 @@ namespace ASP_Foody_Ordering.Controllers
             _passwordHasher = passwordHasher;
         }
         //GET: Lấy số hàng trong giỏ
-        void GetInfo()
+        public void GetInfo()
         {
             // So luong hang trong gio
             ViewData["soluong"] = GetCartItems().Count;
@@ -103,7 +103,7 @@ namespace ASP_Foody_Ordering.Controllers
         }
 
         // Đọc danh sách CartItem từ session
-        List<CartItem> GetCartItems()
+        public List<CartItem> GetCartItems()
         {
             var session = HttpContext.Session;
             string jsoncart = session.GetString("shopcart");
@@ -413,6 +413,19 @@ namespace ASP_Foody_Ordering.Controllers
             }
             return View(taikhoan);
         }
+        public async Task<IActionResult> Hoadon(int? id)
+        {
+            GetInfo();
+            var applicationDbContext = _context.Hoadons.Include(h => h.MaTkNavigation).Where(h=>h.MaTkNavigation.MaTk==id);
+            return View(await applicationDbContext.ToListAsync());
+        }
+        public async Task<IActionResult> Chitiethoadon(int? id)
+        {
+            GetInfo();
+            var applicationDbContext = _context.Cthoadons.Include(h => h.MaHdNavigation).Where(h => h.MaHdNavigation.MaHd == id);
+            return View(await applicationDbContext.ToListAsync());
+        }
+
         [HttpPost]
         public async Task<IActionResult> DoiMK(int? id, string matkhaucu, string matkhaumoi, string xacnhanmatkhau)
         {
@@ -468,5 +481,6 @@ namespace ASP_Foody_Ordering.Controllers
             }
             return View(taikhoan);
         }
+
     }
 }

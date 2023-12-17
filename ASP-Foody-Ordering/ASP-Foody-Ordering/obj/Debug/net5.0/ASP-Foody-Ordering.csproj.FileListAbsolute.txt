@@ -1185,3 +1185,5 @@ C:\Users\Home\Documents\ASP\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Orde
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Taikhoans\DoiMK.cshtml.g.cs
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\Hoadon.cshtml.g.cs
 C:\Users\Home\Documents\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\Chitiethoadon.cshtml.g.cs
+C:\Users\Home\Documents\ASP\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\Chitiethoadon.cshtml.g.cs
+C:\Users\Home\Documents\ASP\ASP-Foody-Ordering\ASP-Foody-Ordering\ASP-Foody-Ordering\obj\Debug\net5.0\Razor\Views\Home\Hoadon.cshtml.g.cs

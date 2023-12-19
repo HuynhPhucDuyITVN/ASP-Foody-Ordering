@@ -481,6 +481,43 @@ namespace ASP_Foody_Ordering.Controllers
             }
             return View(taikhoan);
         }
+        public async Task<IActionResult> HuyHD(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            var hoadon = await _context.Hoadons.FindAsync(id);
+            if (hoadon == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                try
+                {
+                    hoadon.TrangThai = 2;
+                    _context.Update(hoadon);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!HoadonExists(hoadon.MaHd))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(InfoTaiKhoan));
+            }
+        }
+        private bool HoadonExists(int id)
+        {
+            return _context.Hoadons.Any(e => e.MaHd == id);
+        }
     }
 }

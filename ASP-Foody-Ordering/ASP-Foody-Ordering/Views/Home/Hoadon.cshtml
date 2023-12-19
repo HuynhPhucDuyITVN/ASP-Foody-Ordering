@@ -51,6 +51,10 @@
                             }
                             <td>
                                 <a asp-action="Chitiethoadon" asp-route-id="@item.MaHd" class="btn btn-outline-info">Chi tiết</a>
+                                @if(item.TrangThai==0)
+                                {
+                                    <a asp-action="HuyHD" asp-route-id="@item.MaHd" class="btn btn-outline-danger">Hủy đơn hàng</a>
+                                }
                             </td>
                         </tr>
                     }
